@@ -23,7 +23,7 @@ li a {
 }
 
 .popup {
-  margin: 1rem 5rem 1rem 5rem;
+  margin: 1rem 5rem 1rem 9rem;
   display: flex;
   flex-wrap: wrap;
   gap: 20%;
@@ -38,7 +38,8 @@ li a {
 
 .main h2 {
   margin-top: 1.5rem;
-  padding-left: 2rem;
+  font-size: 15px;
+  width: 100%;
 }
 
 button {
