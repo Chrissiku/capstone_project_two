@@ -22,7 +22,27 @@ li a {
   font-size: 25px;
 }
 
-#main {
+.popup {
+  margin: 1rem 5rem 1rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20%;
+}
+
+.main {
   display: flex;
   flex-direction: column;
+  width: 15%;
+  margin-top: 30px;
+}
+
+.main h2 {
+  margin-top: 1.5rem;
+  padding-left: 2rem;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.4rem;
 }
