@@ -9,6 +9,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   background-image: url("https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_960_720.png");
 }
@@ -62,15 +63,15 @@ header nav ul li:focus {
   background: rgb(90, 87, 87);
 }
 
-header nav ul li:hover > a {
-  color: rgba(238, 119, 119, 0.822);
-  font-weight: 500;
-}
-
 header nav ul li a {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
+}
+
+header nav ul li:hover > a {
+  color: rgba(238, 119, 119, 0.822);
+  font-weight: 500;
 }
 
 main {
@@ -93,7 +94,6 @@ main section.container .main-card {
   width: 280px;
   border: 1px solid rgba(255, 255, 255, 0.432);
   border-radius: 5px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +127,11 @@ main section.container .main-card .list-movies div button {
   gap: 10px;
   background: none;
   border: none;
+  color: #fff;
+}
+
+section.comment-popup .comment-modal .close-comment-bn i {
+  font-size: 20px;
   color: #fff;
 }
 
@@ -179,6 +184,190 @@ main section.container .main-card .comment-btn:hover {
   color: #fff;
 }
 
+section.comment-popup {
+  /* display: none; */
+  position: fixed;
+  background-color: rgba(1, 1, 26, 0.7);
+  background-position: top center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(20px);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+section.comment-popup .comment-modal {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.466);
+  border: 2px solid rgba(25, 238, 25, 0.849);
+  width: 90%;
+  height: 95vh;
+  padding: 24px;
+  top: 50%;
+  left: 50%;
+}
+
+section.comment-popup .comment-modal .close-comment-bn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 25px;
+  background-color: rgba(233, 97, 97, 0.39);
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+section.comment-popup .comment-modal .close-comment-bn:hover,
+section.comment-popup .comment-modal .close-comment-bn:focus {
+  background-color: rgba(255, 0, 0, 0.932);
+}
+
+section.comment-popup .comment-modal .card-details {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+section.comment-popup .comment-modal .card-details img {
+  width: 100%;
+}
+
+section.comment-popup .comment-modal .card-details h3 {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+section.comment-popup .comment-modal .card-details .more-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.493);
+  padding: 20px;
+}
+
+section.comment-popup .comment-modal .card-details .more-info li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+}
+
+section.comment-popup .comment-modal .card-details .more-info li span {
+  width: 100%;
+  color: #fff;
+}
+
+section.comment-popup .comment-modal .card-details .more-info li span strong {
+  color: green;
+}
+
+section.comment-popup .comment-modal .card-details .card-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+section.comment-popup .comment-modal .card-details .card-comment h3 {
+  font-size: 16px;
+}
+
+section.comment-popup .comment-modal .card-details .card-comment .comment-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  gap: 20px;
+}
+
+.comment-modal .card-details .card-comment .comment-area .comment-list {
+  box-shadow: 3px 2px 10px #fff;
+  width: 300px;
+}
+
+.comment-modal .card-details .card-comment .comment-area .comment-list p {
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 10px;
+  background-color: rgb(20, 11, 11);
+}
+
+.comment-modal .card-details .card-comment .comment-area .comment-list p:nth-child(even) {
+  background-color: black;
+}
+
+.comment-modal .card-details .card-comment .comment-area form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}
+
+.comment-modal .card-details .card-comment .comment-area form input,
+.comment-modal .card-details .card-comment .comment-area form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid green;
+  border-radius: 10px;
+  background-color: rgba(124, 104, 104, 0.363);
+  color: #fff;
+}
+
+.card-comment .comment-area form input::placeholder,
+.card-comment .comment-area form textarea::placeholder {
+  color: rgba(172, 134, 134, 0.938);
+}
+
+.comment-modal .card-details .card-comment .comment-area form button {
+  width: 100%;
+  padding: 8px 20px;
+  font-size: 15px;
+  background: rgba(38, 100, 38, 0.548);
+  color: rgba(243, 78, 78, 0.973);
+  border: 1px solid green;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+
+.comment-modal .card-details .card-comment .comment-area form button:hover {
+  background: green;
+  color: #fff;
+}
+
+/* Desktop media query */
 @media only screen and (min-width: 768px) {
   header {
     display: flex;
@@ -218,5 +407,28 @@ main section.container .main-card .comment-btn:hover {
 
   main section.container {
     margin: 120px auto;
+  }
+
+  section.comment-popup .comment-modal {
+    width: 60%;
+  }
+
+  section.comment-popup .comment-modal .close-comment-bn {
+    width: 40px;
+  }
+
+  section.comment-popup .comment-modal .close-comment-bn i {
+    font-size: 30px;
+  }
+
+  section.comment-popup .comment-modal .card-details img {
+    width: 80%;
+  }
+
+  section.comment-popup .comment-modal .card-details .more-info {
+    flex-direction: row;
+    gap: 50px;
+    width: auto;
+    text-align: left;
   }
 }
