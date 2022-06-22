@@ -3,15 +3,15 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable quotes */
-import _ from "lodash";
 import "./css/style.css";
 import render from "./modules/displayLike.js";
-import "./modules/likesApi.js";
+import "./modules/likesAPI.js";
 
 fetch("https://api.tvmaze.com/seasons/1/episodes")
   .then((data) => {
     return data.json();
   })
+
   .then((completedata) => {
     let data1 = "";
     completedata.map((values) => {
@@ -29,7 +29,7 @@ fetch("https://api.tvmaze.com/seasons/1/episodes")
     document.getElementById("popup").innerHTML = data1;
   })
   .catch((err) => {
-    // console.log(err);
+    console.log(err);
   });
 
 render();
