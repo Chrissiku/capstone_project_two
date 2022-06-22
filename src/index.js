@@ -1,14 +1,35 @@
-/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
+/* eslint-disable arrow-body-style */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable quotes */
-import _ from "lodash";
 import "./css/style.css";
-import Project from "./assets/images/project.jpg";
+import render from "./modules/displayLike.js";
+import "./modules/likesAPI.js";
 
-const main = document.querySelector("#main");
+fetch("https://api.tvmaze.com/seasons/1/episodes")
+  .then((data) => {
+    return data.json();
+  })
 
-main.innerHTML = _.join(["webpack", "config"], " ");
+  .then((completedata) => {
+    let data1 = "";
+    completedata.map((values) => {
+      data1 += `
+        <div class="main" id="main">
+        <img src=${values.image.medium} alt="img">
+        <div class="list-movies">
+            <h2 class="title">${values.name}</h2>
+            <img class='heart' src="../src/assets/images/love.png" alt='heart'>
+            <button type="button" class="like">like</button></div>
+        <button>comments</button>
+        <button>Reservation</button>
+      </div>`;
+    });
+    document.getElementById("popup").innerHTML = data1;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-const myProject = new Image();
-myProject.src = Project;
-
-main.appendChild(myProject);
+render();
