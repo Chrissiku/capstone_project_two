@@ -4,10 +4,10 @@ import "./css/style.css";
 import render from './modules/displayLike.js';
 import './modules/likesAPI.js';
 
-fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {
-  return data.json();
-}).then((completedata) => {
-    let data1 = "";
+fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {return data.json()})
+ 
+.then((completedata) => {
+  let data1 = "";
   completedata.map((values) => {
     data1 += `
         <div class="main" id="main">
@@ -19,7 +19,7 @@ fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {
         <button>comments</button>
         <button>Reservation</button>
       </div>`;
-  }); 
+  });
   document.getElementById('popup').innerHTML = data1;
 }).catch((err) => {
   console.log(err);
