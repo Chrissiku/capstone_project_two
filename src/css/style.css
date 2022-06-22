@@ -11,6 +11,11 @@ nav {
   padding: 40px;
 }
 
+.logo {
+  width: 150px;
+  border-radius: 20%;
+}
+
 ul {
   display: flex;
   list-style: none;
@@ -23,7 +28,7 @@ li a {
 }
 
 .popup {
-  margin: 1rem 5rem 1rem 9rem;
+  margin: 0 5rem 1rem 9rem;
   display: flex;
   flex-wrap: wrap;
   gap: 17%;

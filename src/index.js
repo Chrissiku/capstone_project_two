@@ -2,6 +2,8 @@
 /* eslint-disable quotes */
 import _ from "lodash";
 import "./css/style.css";
+import render from './modules/displayLike.js';
+import './modules/likesApi.js';
 
 fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {
     return data.json();
@@ -24,3 +26,4 @@ fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {
     console.log(err);
 })
 
+render();
