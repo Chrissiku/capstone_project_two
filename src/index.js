@@ -15,6 +15,7 @@ fetch("https://api.tvmaze.com/seasons/1/episodes")
   .then((completedata) => {
     let data1 = "";
     completedata.map((values) => {
+      const openPopup = document.querySelector(".comment-btn");
       data1 += `
       <div class="main-card" id="main-card">
         <img src="${values.image.medium}" alt="img" />
