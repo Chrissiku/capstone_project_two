@@ -26,24 +26,47 @@ li a {
   margin: 1rem 5rem 1rem 9rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 20%;
+  gap: 17%;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 20%;
   margin-top: 30px;
 }
 
 .main h2 {
   margin-top: 1.5rem;
-  font-size: 15px;
+  font-size: 18px;
   width: 100%;
+}
+
+.main img {
+  border-radius: 8%;
 }
 
 button {
   width: 100%;
   margin-top: 10px;
   font-size: 1.4rem;
+}
+
+.list-movies {
+  display: flex;
+}
+
+.like {
+  width: 40%;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.heart {
+  position: relative;
+  top: 15px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  filter: invert(63%) sepia(19%) saturate(5536%) hue-rotate(296deg) brightness(102%) contrast(101%) opacity(90%);
 }

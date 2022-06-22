@@ -11,7 +11,10 @@ fetch('https://api.tvmaze.com/seasons/1/episodes').then((data) => {
         data1+= `
         <div class="main" id="main">
         <img src=${values.image.medium} alt="img">
-        <h2 class="title">${values.name}</h2>
+        <div class="list-movies">
+            <h2 class="title">${values.name}</h2>
+            <img class='heart' src="../src/assets/images/love.png" alt='heart'>
+            <button type="button" class="like">like</button></div>
         <button>comments</button>
         <button>Reservation</button>
       </div>`
