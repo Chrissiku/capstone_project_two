@@ -1,77 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 40px;
-}
-
-.logo {
-  width: 150px;
-  border-radius: 20%;
-}
-
-ul {
-  display: flex;
   list-style: none;
-  gap: 3rem;
-}
-
-li a {
   text-decoration: none;
-  font-size: 25px;
 }
 
-.popup {
-  margin: 0 5rem 1rem 9rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 17%;
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_960_720.png");
 }
 
-.main {
+header {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  width: 20%;
-  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.911);
+  box-shadow: 3px 3px 3px rgba(99, 96, 96, 0.719);
+  z-index: 1;
 }
 
-.main h2 {
-  margin-top: 1.5rem;
-  font-size: 18px;
+header a.logo {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background: rgba(255, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  border-radius: 50px 0 50px 0;
+}
+
+header nav {
   width: 100%;
 }
 
-.main img {
-  border-radius: 8%;
-}
-
-button {
-  width: 100%;
-  margin-top: 10px;
-  font-size: 1.4rem;
-}
-
-.list-movies {
+header nav ul {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
 }
 
-.like {
+header nav ul li {
   width: 40%;
-  height: 30px;
-  margin-top: 10px;
+  background: rgb(48, 46, 46);
+  text-align: center;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.heart {
+header nav ul li:hover,
+header nav ul li:focus {
+  background: rgb(90, 87, 87);
+}
+
+header nav ul li:hover > a {
+  color: rgba(238, 119, 119, 0.822);
+  font-weight: 500;
+}
+
+header nav ul li a {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.719);
+}
+
+main section.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 180px auto;
+  column-gap: 10px;
+  row-gap: 30px;
+}
+
+main section.container .main-card {
+  height: 320px;
+  width: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  top: 15px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  filter: invert(63%) sepia(19%) saturate(5536%) hue-rotate(296deg) brightness(102%) contrast(101%) opacity(90%);
+}
+
+main section.container .main-card img {
+  width: 100%;
+  height: auto;
+}
+
+main section.container .main-card .list-movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+
+main section.container .main-card .list-movies h2 {
+  font-size: 20px;
+  color: rgb(235, 143, 143);
+}
+
+main section.container .main-card .list-movies div button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+main section.container .main-card .list-movies div button i {
+  font-size: 20px;
+}
+
+main section.container .main-card .list-movies div button i:hover,
+main section.container .main-card .list-movies div button i:focus {
+  color: rgba(243, 78, 78, 0.973);
+}
+
+main section.container .main-card .list-movies div button span {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+main section.container .main-card .card-text {
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main section.container .main-card .card-text p {
+  color: #fff;
+  font-weight: 100;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+main section.container .main-card .comment-btn {
+  position: absolute;
+  bottom: 10px;
+  width: auto;
+  padding: 8px 20px;
+  font-size: 15px;
+  background: rgba(38, 100, 38, 0.548);
+  color: rgba(243, 78, 78, 0.973);
+  border: 1px solid green;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+
+main section.container .main-card .comment-btn:hover {
+  background: green;
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  header nav {
+    width: auto;
+  }
+
+  header nav ul {
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  header nav ul li {
+    width: auto;
+    background: none;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  header nav ul li:hover,
+  header nav ul li:focus {
+    background: rgb(90, 87, 87);
+  }
+
+  header nav ul li a {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  main section.container {
+    margin: 120px auto;
+  }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 /* eslint-disable arrow-body-style */
@@ -16,17 +17,21 @@ fetch("https://api.tvmaze.com/seasons/1/episodes")
     let data1 = "";
     completedata.map((values) => {
       data1 += `
-        <div class="main" id="main">
-        <img src=${values.image.medium} alt="img">
+      <div class="main-card" id="main-card">
+        <img src="${values.image.medium}" alt="img" />
         <div class="list-movies">
-            <h2 class="title">${values.name}</h2>
-            <img class='heart' src="../src/assets/images/love.png" alt='heart'>
-            <button type="button" class="like">like</button></div>
-        <button>comments</button>
-        <button>Reservation</button>
+          <h2 class="title">${`${values.name.slice(0, 20)}`}</h2>
+          <div>
+            <button type="button" class="like"><i class="fa-solid fa-thumbs-up"></i><span>0</span></button>
+          </div>
+        </div>
+        <div class="card-text">        
+          <p>${`${values.summary.slice(0, 95)} ...`}</p>
+        </div>
+          <button type="button" class="comment-btn">Read more & comments</button>
       </div>`;
     });
-    document.getElementById("popup").innerHTML = data1;
+    document.getElementById("container").innerHTML = data1;
   })
   .catch((err) => {
     console.log(err);
