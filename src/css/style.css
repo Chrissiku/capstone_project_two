@@ -185,7 +185,7 @@ main section.container .main-card .comment-btn:hover {
 }
 
 section.comment-popup {
-  /* display: none; */
+  display: none;
   position: fixed;
   background-color: rgba(1, 1, 26, 0.7);
   background-position: top center;
@@ -320,7 +320,12 @@ section.comment-popup .comment-modal .card-details .card-comment .comment-area {
   background-color: rgb(20, 11, 11);
 }
 
-.comment-modal .card-details .card-comment .comment-area .comment-list p:nth-child(even) {
+.comment-modal
+  .card-details
+  .card-comment
+  .comment-area
+  .comment-list
+  p:nth-child(even) {
   background-color: black;
 }
 
