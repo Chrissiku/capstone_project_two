@@ -5,20 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Capstone Project</title>
-  <script defer src="main.js"></script></head>
+    <script defer src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/985640b3e3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
   <body>
-    <nav>
-      <div>
-          <img class="logo" src="../src/assets/images/movies-logo.webp" alt="logo">
+    <!-- Header part -->
+    <header>
+      <a href="index.html" class="logo">CINEMA Tv</a>
+      <nav>
+        <ul>
+          <li><a href="#"> Movies </a></li>
+          <li><a href="#"> Webseries </a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main section of the website -->
+    <main>
+      <section class="container" id="container"></section>
+    </main>
+
+    <!-- Comment popup -->
+    <section class="comment-popup">
+      <div class="comment-modal">
+        <button type="button" class="close-comment-bn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="card-details">
+          <img
+            src="https://static.tvmaze.com/uploads/images/original_untouched/1/4389.jpg"
+            alt="Card original image"
+          />
+          <h3>Title of the episode</h3>
+          <ul class="more-info">
+            <li>
+              <span><strong> Date </strong>: 2013-07-01</span>
+              <span><strong> Time </strong>: 22:00</span>
+            </li>
+            <li>
+              <span><strong> View time </strong>: 60 Minutes</span>
+              <span><strong> Rating </strong>: average (7.3)</span>
+            </li>
+          </ul>
+          <div class="card-comment">
+            <h3>Comments (100)</h3>
+            <div class="comment-area">
+              <div class="comment-list">
+                <p>2013-07-01 : So amazing</p>
+                <p>2013-07-01 : So amazing</p>
+              </div>
+              <form autocomplete="off" id="comment-form">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                />
+                <textarea
+                  name="message"
+                  id=""
+                  cols="30"
+                  rows="5"
+                  placeholder="Your Insight"
+                ></textarea>
+                <button type="submit">Comment</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul>
-          <li> <a href=""></a> </li>
-          <li> <a href=""> Movies </a> </li>
-          <li> <a href=""> Webseries </a> </li>
-      </ul>
-  </nav>
-    <section class="popup" id="popup">
- 
     </section>
   </body>
 </html>
