@@ -23,7 +23,7 @@ export default async () => {
     const dataID = element.getAttribute("data-id");
     element.addEventListener("click", async () => {
       let response = await fetch(
-        `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/byg3KtvqOhmd3Xt9Axu5/comments?item_id=item${dataID}`
+        `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/byg3KtvqOhmd3Xt9Axu5/comments?item_id=item${dataID}`,
       );
       let comments = await response.json();
       const title = chaArray[dataID].name.substring(0, 15);
@@ -103,10 +103,10 @@ export default async () => {
             headers: {
               "Content-type": "application/json; charset=UTF-8",
             },
-          }
+          },
         );
         response = await fetch(
-          `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/byg3KtvqOhmd3Xt9Axu5/comments?item_id=item${dataID}`
+          `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/byg3KtvqOhmd3Xt9Axu5/comments?item_id=item${dataID}`,
         );
         comments = await response.json();
         commentsContainer.innerHTML = "";

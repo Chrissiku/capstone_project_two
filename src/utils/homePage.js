@@ -52,7 +52,7 @@ export default async () => {
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
-        }
+        },
       );
       likeArray = await getCharLikes();
       likeContainer[index].innerHTML = `${likeArray[index].likes}`;

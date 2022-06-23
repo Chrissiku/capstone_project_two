@@ -322,12 +322,7 @@ section.comment-popup .comment-modal .card-details .card-comment .comment-area {
   background-color: rgb(20, 11, 11);
 }
 
-.comment-modal
-  .card-details
-  .card-comment
-  .comment-area
-  .comment-list
-  p:nth-child(even) {
+.comment-modal .card-details .card-comment .comment-area .comment-list p:nth-child(even) {
   background-color: black;
 }
 
