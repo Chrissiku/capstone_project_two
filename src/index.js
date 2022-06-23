@@ -1,37 +1,16 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-multiple-empty-lines */
+/* eslint-disable linebreak-style */
 /* eslint-disable array-callback-return */
 /* eslint-disable arrow-body-style */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable quotes */
 import "./css/style.css";
-import "./modules/likesAPI.js";
-import "./modules/comment.js";
 
-fetch("https://api.tvmaze.com/seasons/1/episodes")
-  .then((data) => {
-    return data.json();
-  })
+import eventListners from "./utils/commentPopUp.js";
+import itemsCounter from "./utils/itemsCounter.js";
 
-  .then((completedata) => {
-    let data1 = "";
-    completedata.map((values) => {
-      data1 += `
-      <div class="main-card" id="main-card">
-        <img src="${values.image.medium}" alt="img" />
-        <div class="list-movies">
-          <h2 class="title">${`${values.name.substring(0, 20)}`}</h2>
-          <div>
-            <button type="button" class="like"><i class="fa-solid fa-thumbs-up"></i><span>0</span></button>
-          </div>
-        </div>
-        <div class="card-text">        
-          <p>${`${values.summary.substring(0, 95)} ...`}</p>
-        </div>
-          <button type="button" class="comment-btn" id="commentBtn">Read more & comments</button>
-      </div>`;
-    });
-    document.getElementById("container").innerHTML = data1;
-  })
-  .catch((err) => {
-    alert(err);
-  });
+eventListners();
+itemsCounter();

@@ -101,8 +101,8 @@ main section.container .main-card {
 }
 
 main section.container .main-card img {
-  width: 100%;
-  height: auto;
+  width: 250px;
+  height: 180px;
 }
 
 main section.container .main-card .list-movies {
@@ -184,8 +184,10 @@ main section.container .main-card .comment-btn:hover {
   color: #fff;
 }
 
+/* COMMENT POPUP */
+
 section.comment-popup {
-  /* display: none; */
+  display: none;
   position: fixed;
   background-color: rgba(1, 1, 26, 0.7);
   background-position: top center;
@@ -320,7 +322,12 @@ section.comment-popup .comment-modal .card-details .card-comment .comment-area {
   background-color: rgb(20, 11, 11);
 }
 
-.comment-modal .card-details .card-comment .comment-area .comment-list p:nth-child(even) {
+.comment-modal
+  .card-details
+  .card-comment
+  .comment-area
+  .comment-list
+  p:nth-child(even) {
   background-color: black;
 }
 
