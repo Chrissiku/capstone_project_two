@@ -93,14 +93,15 @@ const showCommentModal = async () => {
         <h3>${movieDetails.name}</h3>
         <ul class="more-info">
           <li>
-            <span><strong> Date </strong>: ${movieDetails.language}</span>
-            <span><strong> Time </strong>: ${movieDetails.language}</span>
+            <span><strong> Language </strong>: ${movieDetails.language}</span>
+            <span><strong> Genre </strong>: ${movieDetails.genres}</span>
           </li>
           <li>
-            <span><strong> View time </strong>: ${movieDetails.language}</span>
-            <span><strong> Rating </strong>: ${movieDetails.language}</span>
+            <span><strong> Runtime </strong>: ${movieDetails.runtime} minutes</span>
+            <span><strong> premiered </strong>: ${movieDetails.premiered}</span>
           </li>
         </ul>
+        <p class="summary">${movieDetails.summary}</p>
         <div class="card-comment">
           <h3 class="comm-header"></h3>
           <div class="comment-area">
