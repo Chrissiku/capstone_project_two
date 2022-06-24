@@ -381,6 +381,13 @@ section.comment-popup .comment-modal .card-details .card-comment .comment-area {
   color: #fff;
 }
 
+footer {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
 /* Desktop media query */
 @media only screen and (min-width: 768px) {
   header {
