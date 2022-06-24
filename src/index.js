@@ -1,17 +1,11 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable import/no-duplicates */
-/* eslint-disable linebreak-style */
-/* eslint-disable array-callback-return */
-/* eslint-disable arrow-body-style */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable quotes */
-import "./css/style.css";
-import movies from "./modules/pageBody.js";
-import likeMovie from "./modules/likeFeature.js";
+import './css/style.css';
+import renderMovies from './modules/pageBody.js';
+import likeMovie from './modules/likeFeature.js';
 
-const body = document.querySelector("body");
-movies();
+renderMovies();
+const body = document.querySelector('body');
 
-body.addEventListener("click", () => {
+body.addEventListener('click', () => {
   likeMovie();
 });

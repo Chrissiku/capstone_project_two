@@ -1,32 +1,24 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-duplicates */
-/* eslint-disable linebreak-style */
-/* eslint-disable array-callback-return */
-/* eslint-disable arrow-body-style */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable quotes */
+import fetchFromApi from './renderMovies.js';
+import fetchMovieLikes from './fetchMovieLikes.js';
 
-import fetchFromApi from "./renderMovies.js";
-import fetchMovieLikes from "./fetchMovieLikes.js";
-
-const commentModal = document.getElementById("comment-popup");
+const commentModal = document.getElementById('comment-popup');
 let count = 0;
-const counter = document.getElementById("count");
-const moviesCards = document.getElementById("container");
+const counter = document.getElementById('count');
+const moviesCards = document.getElementById('container');
 let currentValue = 0;
 
-const appId = "jQcwh1wRBsAT8XgABb4X";
+const appId = 'jQcwh1wRBsAT8XgABb4X';
 const invUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`;
 
 const fetchComments = async (itemId) => {
   try {
     const comments = await fetch(`${invUrl}?item_id=${itemId}`);
     const data = await comments.json();
-    const commentHead = document.querySelector(".comm-header");
-    const commentList = document.querySelector(".comment-list");
+    const commentHead = document.querySelector('.comm-header');
+    const commentList = document.querySelector('.comment-list');
     if (data.length > 0) {
       commentHead.innerHTML = `Comments(${data.length})`;
-      commentList.innerHTML = "";
+      commentList.innerHTML = '';
       data.forEach((comm) => {
         const commentItem = `        
         <p>${comm.creation_date} ${comm.username}: ${comm.comment}</p>
@@ -34,26 +26,26 @@ const fetchComments = async (itemId) => {
         commentList.innerHTML += commentItem;
       });
     } else {
-      commentHead.innerHTML = "Comments(0)";
+      commentHead.innerHTML = 'Comments(0)';
       const noComment = `
       <p>No comment on this post</p>
       `;
       commentList.innerHTML = noComment;
     }
   } catch (err) {
-    throw new Error("Request error: ", err);
+    throw new Error('Request error: ', err);
   }
 };
 
 const postComment = async (itemId) => {
-  const username = document.querySelector(".username");
-  const comment = document.querySelector(".usermassage");
+  const username = document.querySelector('.username');
+  const comment = document.querySelector('.usermassage');
 
-  if (username.value !== "" || comment.value !== "") {
+  if (username.value !== '' || comment.value !== '') {
     try {
       const response = await fetch(invUrl, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           item_id: itemId,
           username: username.value,
@@ -62,13 +54,13 @@ const postComment = async (itemId) => {
       });
       const data = response.text();
       if (response.ok) {
-        username.value = "";
-        comment.value = "";
+        username.value = '';
+        comment.value = '';
         fetchComments(itemId);
         return data;
       }
     } catch (err) {
-      throw new Error("Request error: ", err);
+      throw new Error('Request error: ', err);
     }
     return true;
   }
@@ -76,20 +68,20 @@ const postComment = async (itemId) => {
 };
 
 const closePopupModal = () => {
-  const closeIcon = document.querySelector("#close");
-  closeIcon.addEventListener("click", (e) => {
+  const closeIcon = document.querySelector('#close');
+  closeIcon.addEventListener('click', (e) => {
     e.preventDefault();
-    commentModal.style.display = "none";
+    commentModal.style.display = 'none';
   });
 };
 
 const showCommentModal = async () => {
   const arr = await fetchFromApi();
-  const commentBtns = document.querySelectorAll(".comment-btn");
+  const commentBtns = document.querySelectorAll('.comment-btn');
   commentBtns.forEach((commentBtn) => {
-    const btnId = commentBtn.getAttribute("id");
+    const btnId = commentBtn.getAttribute('id');
     const movieDetails = arr[btnId];
-    commentBtn.addEventListener("click", () => {
+    commentBtn.addEventListener('click', () => {
       fetchComments(btnId);
       const modal = `          
       <div class="comment-modal">
@@ -117,7 +109,7 @@ const showCommentModal = async () => {
             <form autocomplete="off" id="comment-form">
               <input type="text" class="username" name="name" id="name" placeholder="Your name"/>
               <textarea name="message" class="usermassage" id="" cols="30" rows="5" placeholder="Your Insight" ></textarea>
-              <button class="comment-btn" id="${btnId}" type="button">Comment</button>
+              <button class="new-comment" id="${btnId}" type="button">Comment</button>
             </form>
           </div>
         </div>
@@ -126,11 +118,11 @@ const showCommentModal = async () => {
       `;
 
       commentModal.innerHTML = modal;
-      commentModal.style.display = "block";
+      commentModal.style.display = 'block';
       closePopupModal();
 
-      const cmntBtn = document.querySelector(".comment-btn");
-      cmntBtn.addEventListener("click", () => {
+      const cmntBtn = document.querySelector('.new-comment');
+      cmntBtn.addEventListener('click', () => {
         postComment(btnId);
       });
     });
@@ -138,15 +130,15 @@ const showCommentModal = async () => {
 };
 
 // Render all Movies card
-const movies = async () => {
+const renderMovies = async () => {
   const arr = await fetchFromApi();
-  arr.slice(0, 20).forEach((movie) => {
+  arr.slice(0, 10).forEach((movie) => {
     fetchMovieLikes().then((res) => {
       currentValue = res;
       let assignLike = 0;
 
       const like = currentValue.filter(
-        (element) => element.item_id === movie.name
+        (element) => element.item_id === movie.name,
       );
       if (like.length === 0) {
         assignLike = 0;
@@ -166,8 +158,8 @@ const movies = async () => {
             <p>${`${movie.summary.substring(0, 80)} ...`}</p>
           </div>
             <button type="button" class="comment-btn" id="${arr.indexOf(
-              movie
-            )}">Read more & comments</button>
+    movie,
+  )}">Read more & comments</button>
         </div>`;
       showCommentModal();
     });
@@ -175,8 +167,8 @@ const movies = async () => {
     count += 1;
   });
 
-  counter.innerText = `(${count})`;
-  counter.style.color = "red";
+  counter.innerText = `(${count * 2})`;
+  counter.style.color = 'red';
 };
 
-export default movies;
+export default renderMovies;
