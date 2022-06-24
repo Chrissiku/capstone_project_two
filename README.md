@@ -23,7 +23,8 @@
 
 ## Live Demo (not avialable)
 
-Click [Here](https://chrissiku.github.io/Leaderboard/dist) To open the live demo
+Click [Here](https://chrissiku.github.io/capstone_project_two/dist
+) To open the live demo
 
 ## Getting Started
 
