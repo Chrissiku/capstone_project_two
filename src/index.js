@@ -1,4 +1,9 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+import "./css/style.css";
+import renderMovies from "./modules/pageBody.js";
+import likeMovie from "./modules/likeFeature.js";
+/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-multiple-empty-lines */
@@ -7,10 +12,10 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable quotes */
-import "./css/style.css";
 
-import eventListners from "./utils/commentPopUp.js";
-import itemsCounter from "./utils/itemsCounter.js";
+renderMovies();
+const body = document.querySelector("body");
 
-eventListners();
-itemsCounter();
+body.addEventListener("click", () => {
+  likeMovie();
+});
