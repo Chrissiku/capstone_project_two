@@ -60,7 +60,7 @@ const postComment = async (itemId) => {
           comment: comment.value,
         }),
       });
-      const data = response.json();
+      const data = response.text();
       if (response.ok) {
         username.value = "";
         comment.value = "";
@@ -110,7 +110,7 @@ const showCommentModal = async () => {
             <form autocomplete="off" id="comment-form">
               <input type="text" class="username" name="name" id="name" placeholder="Your name"/>
               <textarea name="message" class="usermassage" id="" cols="30" rows="5" placeholder="Your Insight" ></textarea>
-              <button type="button" id="${btnId}" class="comment-btn">Comment</button>
+              <button class="comment-btn" id="${btnId}" type="button">Comment</button>
             </form>
           </div>
         </div>
@@ -120,6 +120,7 @@ const showCommentModal = async () => {
 
       commentModal.innerHTML = modal;
       commentModal.style.display = "block";
+
       const cmntBtn = document.querySelector(".comment-btn");
       cmntBtn.addEventListener("click", () => {
         postComment(btnId);
@@ -137,7 +138,7 @@ const movies = async () => {
       let assignLike = 0;
 
       const like = currentValue.filter(
-        (element) => element.item_id === movie.name,
+        (element) => element.item_id === movie.name
       );
       if (like.length === 0) {
         assignLike = 0;
@@ -150,15 +151,15 @@ const movies = async () => {
           <div class="list-movies">
             <h2 class="title">${`${movie.name.substring(0, 15)}`}</h2>
             <div>
-              <button type="button" class="like"><i class="fa-solid fa-thumbs-up"></i><span>${assignLike}</span></button>
+              <button type="button" class="like"><i class="fa-solid fa-thumbs-up"></i><span id="count-like">${assignLike}</span></button>
             </div>
           </div>
           <div class="card-text">        
             <p>${`${movie.summary.substring(0, 80)} ...`}</p>
           </div>
             <button type="button" class="comment-btn" id="${arr.indexOf(
-    movie,
-  )}">Read more & comments</button>
+              movie
+            )}">Read more & comments</button>
         </div>`;
       showCommentModal();
     });

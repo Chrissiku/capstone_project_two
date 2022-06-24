@@ -8,7 +8,11 @@
 import "./css/style.css";
 // import render from "./modules/displayMovies.js";
 import movies from "./modules/pageBody.js";
+import likeMovie from "./modules/likeFeature.js";
 
-// render();
-
+const body = document.querySelector("body");
 movies();
+
+body.addEventListener("click", () => {
+  likeMovie();
+});
