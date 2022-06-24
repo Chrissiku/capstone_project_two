@@ -167,8 +167,8 @@ const movies = async () => {
     count += 1;
   });
 
-  // counter.innerText = `[${count}]`;
-  // counter.style.color = "blue";
+  counter.innerText = `(${count})`;
+  counter.style.color = "red";
 };
 
 export default movies;
