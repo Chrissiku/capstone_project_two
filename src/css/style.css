@@ -90,8 +90,8 @@ main section.container {
 }
 
 main section.container .main-card {
-  height: 320px;
-  width: 280px;
+  height: 400px;
+  width: 250px;
   border: 1px solid rgba(255, 255, 255, 0.432);
   border-radius: 5px;
   display: flex;
@@ -102,7 +102,8 @@ main section.container .main-card {
 
 main section.container .main-card img {
   width: 100%;
-  height: auto;
+  height: 60%;
+  /* display: none; */
 }
 
 main section.container .main-card .list-movies {
@@ -183,6 +184,8 @@ main section.container .main-card .comment-btn:hover {
   background: green;
   color: #fff;
 }
+
+/* Comment popup */
 
 section.comment-popup {
   display: none;
