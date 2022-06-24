@@ -2,7 +2,7 @@
 
 # Project Name :  Cinema Tv Show
 
-> The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
+> In this project we are making a Cinema TV webapp using an external API's
 >
 >
 > In order to achieve this project I used some resources and technologies listed below :
