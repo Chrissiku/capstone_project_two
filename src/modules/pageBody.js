@@ -75,6 +75,14 @@ const postComment = async (itemId) => {
   return false;
 };
 
+const closePopupModal = () => {
+  const closeIcon = document.querySelector("#close");
+  closeIcon.addEventListener("click", (e) => {
+    e.preventDefault();
+    commentModal.style.display = "none";
+  });
+};
+
 const showCommentModal = async () => {
   const arr = await fetchFromApi();
   const commentBtns = document.querySelectorAll(".comment-btn");
@@ -83,8 +91,7 @@ const showCommentModal = async () => {
     const movieDetails = arr[btnId];
     commentBtn.addEventListener("click", () => {
       fetchComments(btnId);
-      const modal = `
-          
+      const modal = `          
       <div class="comment-modal">
       <button type="button" id="close" class="close-comment-bn">
         <i class="fa-solid fa-xmark"></i>
@@ -120,6 +127,7 @@ const showCommentModal = async () => {
 
       commentModal.innerHTML = modal;
       commentModal.style.display = "block";
+      closePopupModal();
 
       const cmntBtn = document.querySelector(".comment-btn");
       cmntBtn.addEventListener("click", () => {
