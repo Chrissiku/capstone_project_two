@@ -101,10 +101,12 @@ main section.container .main-card {
 }
 
 main section.container .main-card img {
+
   width: 100%;
   height: 60%;
 
-  /* display: none; */
+  /* display: none; */;
+
 }
 
 main section.container .main-card .list-movies {
@@ -194,7 +196,7 @@ main section.container .main-card .comment-btn:hover {
   color: #fff;
 }
 
-/* Comment popup */
+/* COMMENT POPUP */
 
 section.comment-popup {
   display: none;
