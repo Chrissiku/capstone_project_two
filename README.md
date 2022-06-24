@@ -11,7 +11,7 @@
 
 | On Desktop                                                                                                                                                                 | On Mobile                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img width="800" alt="Desktop version of the project" src="https://user-images.githubusercontent.com/101924220/174114176-a3bdd362-7c82-44c6-8871-591ec4ee54ad.PNG"> | <img width="320" alt="Mobile Version" src="https://user-images.githubusercontent.com/101924220/174114176-a3bdd362-7c82-44c6-8871-591ec4ee54ad.PNG"> |
+| <img width="800" alt="Desktop version of the project" src="https://user-images.githubusercontent.com/101924220/175563231-f5bba37e-93a8-46ac-85c5-2208dc150520.PNG"> | <img width="320" alt="Mobile Version" src="https://user-images.githubusercontent.com/101924220/175563247-ac1dae1f-f418-45e5-abc1-360bb4d1bdb1.PNG"> |
 
 ## Built With
 
